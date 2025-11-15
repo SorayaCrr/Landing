@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}CEAMA - Centro Educativo{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'landing/css/estilos.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <div class="container nav-content">
+        <div class="logo">
+          <img src="{% static 'landing/img/ceama.png' %}" alt="CEAMA Logo">
+          CEAMA
+        </div>
+        <ul class="nav-links">
+          <li><a href="#quienes-somos">Quiénes Somos </a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="{% url 'pagos_regularizar_lookup' %}" class="btn">Regularización de pagos</a>
+        <a href="/estudiantes/registrar" class="btn-inscribete">Inscríbete</a>
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="footer">
+    <p>© 2025 CEAMA. Todos los derechos reservados.</p>
+    <p>Educación moderna, humana y digital para transformar tu futuro.</p>
+  </footer>
+
+</body>
+</html>
